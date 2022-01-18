@@ -2,18 +2,15 @@
 
 namespace App\Controllers;
 
-class Auth extends BaseController
+class Authentication extends BaseController
 {
   
     
     public function index()
     {
-        return redirect()->to(site_url('login'));
+        return view('login');
     }
 
-    public function login(){
-        return view('auth/login');
-    }
 
     public function loginproses(){
         
