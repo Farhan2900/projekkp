@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 use App\Models\AlumniModel;
 use App\Models\SiswaModel;
 

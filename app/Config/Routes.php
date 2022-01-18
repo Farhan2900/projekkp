@@ -35,7 +35,7 @@ $routes->setAutoRoute(true);
 $routes->get('loginproses', 'Authentication::loginproses');
 $routes->get('kelas', 'Kelas::index');
 $routes->get('kelas/add', 'Kelas::create');
-$routes->post('kelas', 'Kelas::save');
+$routes->post('kelas', 'admin\Kelas::save');
 
 // Data Siswa
 $routes->get('siswa', 'Siswa::index');
