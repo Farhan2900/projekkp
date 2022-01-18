@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class HomeModel extends Model
 {
    public function tot_siswa(){
-       return $this->db->table('tb_registrasi')->countAll();
+       return $this->db->table('tb_siswa')->countAll();
    }
    public function tot_alumni(){
        return $this->db->table('tb_alumni')->countAll();

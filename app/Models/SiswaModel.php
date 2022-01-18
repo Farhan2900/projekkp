@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class SiswaModel extends Model
 {
-    protected $table            = 'tb_registrasi';
+    protected $table            = 'tb_siswa';
     protected $primaryKey       = 'NIS';
     protected $returnType       = 'object';
     protected $allowedFields    = ['NIK','nm_siswa','jns_kelamin','tmpt_lhr','tgl_lahir','transportasi','nmr_telp',

@@ -18,9 +18,10 @@
         <div class="card">
             <div class="card-header">
                 <h4 align="center">BUKU INDUK</h4>
+
             </div>
-            <div class="display">
-                <table id="myTable" class="display">
+            <div class="card-body table-responsive">
+                <table class="table table-striped table-md" id="myTable">
                     <tbody>
                         <tr>
                             <th>No</th>
