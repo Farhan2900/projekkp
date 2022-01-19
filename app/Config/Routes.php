@@ -32,13 +32,13 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('auth', 'Auth::index');
 // Data Kelas
-$routes->get('loginproses', 'Authentication::loginproses');
+$routes->post('process', 'Authentication::loginproses');
+$routes->get('registrasi', 'admin\Siswa::registrasi');
+$routes->post('registrasi', 'admin\Siswa::save');
 // $routes->get('registrasi', 'admin\Siswa::get');
 $routes->group('admin', function ($routes) {
     $routes->get('/', 'admin\home::index');
     $routes->get('siswa', 'admin\Siswa::index');
-    $routes->get('registrasi', 'admin\Siswa::registrasi');
-    $routes->post('registrasi', 'admin\Siswa::save');
 });
 $routes->group('instruktur', function ($routes) {
     $routes->add('/', 'instruktur\home::index');
