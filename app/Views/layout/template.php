@@ -15,14 +15,15 @@
     <!-- SweetAlert -->
     <script src="<?= base_url()?>/template/assets/SweetAlert/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="<?= base_url()?>/template/assets/SweetAlert/sweetalert2.min.css">
-
     <link rel="stylesheet" href="<?= base_url()?>/template/node_modules/select2/dist/css/select2.min.css">
-
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url()?>/template/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url()?>/template/assets/css/components.css">
+
+
+
 </head>
 
 <body>
@@ -103,6 +104,9 @@
     <script src="<?= base_url()?>/template/assets/js/custom.js"></script>
 
     <!-- JS Libraies -->
+    <!--  -->
+
+    <!-- JS Libraies -->
     <script src="<?= base_url()?>/template/node_modules/chart.js/dist/Chart.min.js"></script>
     <!-- chart -->
     <script src="<?= base_url()?>/template/node_modules/select2/dist/js/select2.full.min.js"></script>
@@ -110,11 +114,7 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js">
     </script>
     <!-- tables -->
-    <script>
-    $(document).ready(function() {
-        $('#myTable').DataTable();
-    });
-    </script>
+
 
 </body>
 

@@ -11,6 +11,15 @@ class Authentication extends BaseController
         return view('login');
     }
 
+    public function registrasi(){
+
+        return view('registrasi');
+    }   
+
+    public function saveRegister(){
+
+
+    }
 
     public function loginproses(){
         

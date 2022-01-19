@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 use App\Models\AlumniModel;
 use App\Models\SiswaModel;
+use App\Controllers\BaseController;
 
 class Alumni extends BaseController
 {

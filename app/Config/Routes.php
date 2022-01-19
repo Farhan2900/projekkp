@@ -33,20 +33,42 @@ $routes->setAutoRoute(true);
 // $routes->get('auth', 'Auth::index');
 // Data Kelas
 $routes->get('loginproses', 'Authentication::loginproses');
-$routes->get('kelas', 'Kelas::index');
-$routes->get('kelas/add', 'Kelas::create');
+// $routes->get('registrasi', 'admin\Siswa::get');
+
+$routes->get('siswa', 'admin\Siswa::index');
+$routes->get('registrasi', 'admin\Siswa::registrasi');
+$routes->post('registrasi', 'admin\Siswa::save');
+// $routes->post('register', 'admin\Siswa::saveregister');
+// $routes->put('siswa', 'admin\Siswa::edit');
+
+
+
+
+// Data Siswa
+// $routes->get('siswa', 'admin\Siswa::index');
+// $routes->get('siswa/add', 'admin\Siswa::create');
+// $routes->post('siswa', 'admin\Siswa::save');
+// $routes->put('siswa', 'admin\Siswa::edit');
+
+// // Data Siswa
+// $routes->get('alumni', 'Alumni::index');
+// $routes->get('alumni/add', 'Alumni::create');
+// $routes->post('alumni', 'Alumni::save');
+
+// data kelas
+$routes->get('kelas', 'admin\Kelas::index');
+$routes->get('kelas/add', 'admin\Kelas::create');
 $routes->post('kelas', 'admin\Kelas::save');
 
-// Data Siswa
-$routes->get('siswa', 'Siswa::index');
-$routes->get('siswa/add', 'Siswa::create');
-$routes->post('siswa', 'Siswa::save');
-$routes->put('siswa', 'Siswa::edit');
+// Data Program Kursus
+$routes->get('programkursus', 'admin\Programkursus::index');
+$routes->get('programkursus/add', 'admin\Programkursus::create');
+$routes->post('programkursus', 'admin\Programkursus::save');
 
-// Data Siswa
-$routes->get('alumni', 'Alumni::index');
-$routes->get('alumni/add', 'Alumni::create');
-$routes->post('alumni', 'Alumni::save');
+//Data Instruktur
+$routes->get('instruktur', 'admin\instruktur::index');
+$routes->get('instruktur/add', 'admin\instruktur::create');
+$routes->post('instruktur', 'admin\instruktur::save');
 
 // Login
 // $routes->get('login', 'Auth::login');

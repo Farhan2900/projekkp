@@ -2,41 +2,41 @@
 
 namespace App\Controllers\Admin;
 use App\Models\KelasModel;
+use App\Models\ProgramKursusModel;
+use App\Models\InstrukturModel;
+use App\Controllers\BaseController;
 
 class Kelas extends BaseController
 {
     function __construct()
     {
-        $this->kelas = new KelasModel();
+        $this->kelaskursus = new KelasModel();
+        $this->instruktur = new InstrukturModel();
+        $this->programkursus = new ProgramKursusModel();
     }
     public function index()
     {
-        $data['kelas'] = $this->kelas->findAll();
-        return view('kelas/get',$data);
+       $data ['kelaskursus'] = $this->kelaskursus->getAll();
+
+        return view('Kelas/get',$data);
     }
 
     public function create()
     {
-        return view('kelas/add');
-        
+        $data = [
+            'kelaskursus' => $this->kelaskursus->getAll(),
+            'instruktur' => $this->instruktur->findAll(),
+            'programkursus' => $this->programkursus->findAll(),
+        ];
+        return view('Kelas/add',$data);
     }
-
+    
     public function save()
-    {
-        $data = $this->request->getPost();
-        $this->kelas->insert($data);
-        return redirect()->to(site_url('kelas'))->with('success', 'Data Kelas Berhasil Disimpan');
-
-    }
-
-    public function edit($id_kelas = null){
-        $data['kelas'] = $this->kelas->where('id_kelas',$id_kelas)->first();
-        return view('kelas/edit', $data);
-    }
-
-    public function update($id_kelas = null){
-        $data = $this->request->getPost();
-        $this->kelas->update($id_kelas,$data);
-        return redirect()->to(site_url('kelas'))->with('success', 'Data Kelas Berhasil DiUbah');
+    {  
+       
+           $data = $this->request->getPost();
+           $this->kelaskursus->insert($data);
+     
+           return redirect()->to(site_url('kelas'))->with('success', 'Kelas Kursus Berhasil Di Tambahkan');
     }
 }
