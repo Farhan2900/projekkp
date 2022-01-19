@@ -34,10 +34,18 @@ $routes->setAutoRoute(true);
 // Data Kelas
 $routes->get('loginproses', 'Authentication::loginproses');
 // $routes->get('registrasi', 'admin\Siswa::get');
-
-$routes->get('siswa', 'admin\Siswa::index');
-$routes->get('registrasi', 'admin\Siswa::registrasi');
-$routes->post('registrasi', 'admin\Siswa::save');
+$routes->group('admin', function ($routes) {
+    $routes->get('/', 'admin\home::index');
+    $routes->get('siswa', 'admin\Siswa::index');
+    $routes->get('registrasi', 'admin\Siswa::registrasi');
+    $routes->post('registrasi', 'admin\Siswa::save');
+});
+$routes->group('instruktur', function ($routes) {
+    $routes->add('/', 'instruktur\home::index');
+});
+$routes->group('siswa', function ($routes) {
+    $routes->add('/', 'siswa\Home::index');
+});
 // $routes->post('register', 'admin\Siswa::saveregister');
 // $routes->put('siswa', 'admin\Siswa::edit');
 

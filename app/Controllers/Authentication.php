@@ -4,17 +4,13 @@ namespace App\Controllers;
 
 class Authentication extends BaseController
 {
-  
-    
+    public function __construct() {
+        $this->user = new \App\Models\UserModel();
+    }
     public function index()
     {
         return view('login');
     }
-
-    public function registrasi(){
-
-        return view('registrasi');
-    }   
 
     public function saveRegister(){
 
@@ -22,6 +18,44 @@ class Authentication extends BaseController
     }
 
     public function loginproses(){
+        $data = $this->request->getPost();
+        $user = $this->user->asObject()->where('username', $data['username'])->get()->getRowObject();
+        if($user){
+            if(password_verify($data['password'], $hash)){
+                if($user['akses']=='Admin'){
+                    $item = [
+                        'nama'=> 'Administrator',
+                        'username'=> $user->username,
+                        'email'=> $user->email,
+                        'akses'=> $user->akses,
+                    ];
+                    session()->set($item);
+                    return redirect()->to(base_url('admin'));
+                }else if($user['akses']=='Instruktur'){
+                    $ins = new \App\Models\InstrukturModel();
+                    $instruktur = $ins->where('tb_user_id', $user->id)->get()->getRowObject();
+                    $item = [
+                        'nama'=> $instruktur->nm_instruktur,
+                        'username'=> $user->username,
+                        'email'=> $user->email,
+                        'akses'=> $user->akses,
+                    ];
+                    session()->set($item);
+                }else{
+                    $sis = new \App\Models\SiswaModel();
+                    $siswa = $sis->where('tb_user_id', $user->id)->get()->getRowObject();
+                    $item = [
+                        'nama'=> $siswa->nm_siswa,
+                        'username'=> $user->username,
+                        'email'=> $user->email,
+                        'akses'=> $user->akses,
+                    ];
+                    session()->set($item);
+                }
+            }else{
+                
+            }
+        }
         
     }
 
