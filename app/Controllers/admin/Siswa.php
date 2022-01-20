@@ -10,6 +10,7 @@ class Siswa extends BaseController
     {
         $this->siswa = new SiswaModel();
         $this->user = new UserModel();
+        helper('form');
     }
 
     public function index()
@@ -27,17 +28,14 @@ class Siswa extends BaseController
         $data['siswa']= $this->siswa->getUser();
         return view('registrasi',$data);
     }
-
+    
     public function save(){
-        
         $user = [
             'username' => $this->request->getVar('username'),
-            'password' => password_hash($this->request->getVar('password'),PASSWORD_DEFAULT) ,
+            'password' => md5($this->request->getVar('password')),
             'email' =>  $this->request->getVar('email'),
             'akses' => 'Siswa',
         ];
-        // $data = $this->request->getVar();
-        // $data['akses']='Instruktur';
         $this->user->insert($user);
         $iduser = $this->user->getInsertID();
         $data = [

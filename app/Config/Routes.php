@@ -41,10 +41,10 @@ $routes->group('admin', function ($routes) {
     $routes->get('siswa', 'admin\Siswa::index');
 });
 $routes->group('instruktur', function ($routes) {
-    $routes->add('/', 'instruktur\home::index');
+    $routes->get('/', 'admin\home::index');
 });
 $routes->group('siswa', function ($routes) {
-    $routes->add('/', 'siswa\Home::index');
+    $routes->get('', 'Home::index');
 });
 // $routes->post('register', 'admin\Siswa::saveregister');
 // $routes->put('siswa', 'admin\Siswa::edit');

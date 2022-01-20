@@ -18,5 +18,6 @@
 <?php if(session()->get('akses') =='Siswa') :?>
 <li class="menu-header">Navbar Menu</li>
 <li><a class="nav-link" href="<?= site_url()?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+<li><a class="nav-link" href="<?= site_url()?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
 
 <?php endif;?>
