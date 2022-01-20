@@ -22,8 +22,8 @@ class Authentication extends BaseController
         $data = $this->request->getPost();
         $user = $this->user->asObject()->where('username', $data['username'])->get()->getRowObject();
         if($user){
-            if(password_verify($data['password'], $user->password)){
-                if($user['akses']=='Admin'){
+            if(md5($data['password'])==$user->password){
+                if($user->akses=='Admin'){
                     $item = [
                         'nama'=> 'Administrator',
                         'username'=> $user->username,
@@ -32,7 +32,7 @@ class Authentication extends BaseController
                     ];
                     session()->set($item);
                     return redirect()->to(base_url('admin'));
-                }else if($user['akses']=='Instruktur'){
+                }else if($user->akses=='Instruktur'){
                     $ins = new \App\Models\InstrukturModel();
                     $instruktur = $ins->where('tb_user_id', $user->id)->get()->getRowObject();
                     $item = [
@@ -42,6 +42,7 @@ class Authentication extends BaseController
                         'akses'=> $user->akses,
                     ];
                     session()->set($item);
+                    return redirect()->to(base_url('siswa'));
                 }else{
                     $sis = new \App\Models\SiswaModel();
                     $siswa = $sis->where('tb_user_id', $user->id)->get()->getRowObject();
@@ -52,6 +53,7 @@ class Authentication extends BaseController
                         'akses'=> $user->akses,
                     ];
                     session()->set($item);
+                    return redirect()->to(base_url('siswa'));
                 }
             }else{
                 echo "Pasword salah";

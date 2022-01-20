@@ -9,13 +9,13 @@
     <!-- General CSS Files -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="<?= base_url()?>/template/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= base_url()?>/template/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url()?>/template/assets/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url()?>/template/assets/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="icon" type="image/ico" href="<?= base_url()?>/favicon">
     <!-- SweetAlert -->
     <script src="<?= base_url()?>/template/assets/SweetAlert/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="<?= base_url()?>/template/assets/SweetAlert/sweetalert2.min.css">
-    <link rel="stylesheet" href="<?= base_url()?>/template/node_modules/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="<?= base_url()?>/template/assets/select2/dist/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 
     <!-- Template CSS -->
@@ -89,9 +89,9 @@
     </div>
 
     <!-- General JS Scripts -->
-    <script src="<?= base_url()?>/template/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="<?= base_url()?>/template/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="<?= base_url()?>/template/node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
+    <script src="<?= base_url()?>/template/assets/jquery/dist/jquery.min.js"></script>
+    <script src="<?= base_url()?>/template/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?= base_url()?>/template/assets/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
     <script src="<?= base_url()?>/template/assets/js/stisla.js"></script>
 
 
@@ -107,9 +107,9 @@
     <!--  -->
 
     <!-- JS Libraies -->
-    <script src="<?= base_url()?>/template/node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="<?= base_url()?>/template/assets/chart.js/dist/Chart.min.js"></script>
     <!-- chart -->
-    <script src="<?= base_url()?>/template/node_modules/select2/dist/js/select2.full.min.js"></script>
+    <script src="<?= base_url()?>/template/assets/select2/dist/js/select2.full.min.js"></script>
     <!-- tables -->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js">
     </script>
