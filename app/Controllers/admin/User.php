@@ -9,6 +9,7 @@ class User extends BaseController
     function __construct()
     {
         $this->user = new UserModel();
+        helper('form');
     }
     public function index()
     {

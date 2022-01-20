@@ -11,6 +11,7 @@ class Alumni extends BaseController
     {
         $this->alumni = new AlumniModel();
         $this->siswa = new SiswaModel();
+        helper('form');
     }
     public function index()
     {

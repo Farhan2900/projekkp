@@ -15,6 +15,9 @@
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="<?= base_url()?>/template/node_modules/bootstrap-social/bootstrap-social.css">
 
+    <script src="<?= base_url()?>/template/assets/SweetAlert/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="<?= base_url()?>/template/assets/SweetAlert/sweetalert2.min.css">
+
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url()?>/template/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url()?>/template/assets/css/components.css">
@@ -36,6 +39,7 @@
                             <div class="card-header">
                                 <h4>Login</h4>
                             </div>
+                            <div id="gagal" data-flash="<?= session()->getFlashdata('gagal'); ?>"></div>
 
                             <div class="card-body">
                                 <?= form_open(base_url('process')) ?>
@@ -72,7 +76,7 @@
                         </div>
 
                         <div class="simple-footer">
-                            Copyright &copy; Stisla 2018
+                            Copyright &copy; SENTRA KOMPUTER 2018
                         </div>
                     </div>
                 </div>
@@ -94,7 +98,7 @@
     <script src="<?= base_url()?>/template/assets/js/stisla.js"></script>
 
     <!-- JS Libraies -->
-
+    <script src="<?= base_url()?>/template/assets/SweetAlert/sweet.js"></script>
     <!-- Template JS File -->
     <script src="<?= base_url()?>/template/assets/js/scripts.js"></script>
     <script src="<?= base_url()?>/template/assets/js/custom.js"></script>

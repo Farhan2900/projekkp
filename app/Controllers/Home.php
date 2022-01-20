@@ -9,6 +9,7 @@ class Home extends BaseController
     function __construct()
     {
         $this->home = new HomeModel();
+        helper('form');
     }
     public function index()
     {

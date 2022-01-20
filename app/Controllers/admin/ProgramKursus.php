@@ -9,6 +9,7 @@ class ProgramKursus extends BaseController
     function __construct()
     {
         $this->programkursus = new ProgramKursusModel();
+        helper('form');
     }
     public function index()
     {

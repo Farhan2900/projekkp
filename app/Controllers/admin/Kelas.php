@@ -13,6 +13,7 @@ class Kelas extends BaseController
         $this->kelaskursus = new KelasModel();
         $this->instruktur = new InstrukturModel();
         $this->programkursus = new ProgramKursusModel();
+        helper('form');
     }
     public function index()
     {

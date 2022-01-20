@@ -54,9 +54,13 @@ class Authentication extends BaseController
                     session()->set($item);
                 }
             }else{
-                
+                echo "Pasword salah";
             }
         }
         
+    }
+    public function logout(){
+        session()->destroy();
+        return redirect()->to(base_url('login'));
     }
 }

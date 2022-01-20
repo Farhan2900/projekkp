@@ -11,6 +11,7 @@ class Instruktur extends BaseController
     {
         $this->instruktur = new InstrukturModel();
         $this->user = new UserModel();
+        helper('form');
     }
     public function index()
     {

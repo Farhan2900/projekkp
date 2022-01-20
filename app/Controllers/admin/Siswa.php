@@ -10,6 +10,7 @@ class Siswa extends BaseController
     {
         $this->siswa = new SiswaModel();
         $this->user = new UserModel();
+        helper('form');
     }
 
     public function index()
