@@ -56,7 +56,7 @@ class Authentication extends BaseController
                     return redirect()->to(base_url('siswa'));
                 }
             }else{
-                echo "Pasword salah";
+               echo "password tidka di kenali";
             }
         }
         

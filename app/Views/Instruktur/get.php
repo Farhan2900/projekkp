@@ -37,7 +37,8 @@
                             <td><?= $value->akses ?></td>
 
                             <td class="text-center" style="width: 95px;">
-                                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                <a href="<?= base_url('admin/instruktur/edit/'.$value->id_instruktur)?>"
+                                    class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
                             </td>
                         </tr>
                         <?php endforeach?>

@@ -4,7 +4,7 @@
     <div class="section-header">
         <h1>Dashboard</h1>
     </div>
-
+    <div id="flash" data-flash="<?= session()->getFlashdata('success'); ?>"></div>
     <div class="section-body">
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">

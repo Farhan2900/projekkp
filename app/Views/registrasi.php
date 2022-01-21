@@ -72,7 +72,7 @@
                                     </button>
                                 </div>
                                 <div class="mt-5 text-muted text-center">
-                                    Sudah punya akun? <a href="<?= site_url('login')?>">Login</a>
+                                    Sudah punya akun? <a href="<?= site_url('/')?>">Login</a>
                                 </div>
                             </div>
                         </div>

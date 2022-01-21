@@ -32,7 +32,7 @@ class Instruktur extends BaseController
        
             $user = [
                 'username' => $this->request->getVar('username'),
-                'password' => $this->request->getVar('password'),
+                'password' => md5($this->request->getVar('password')) ,
                 'email' => $this->request->getVar('email'),
                 'akses' => 'Instruktur',
             ];
@@ -51,4 +51,20 @@ class Instruktur extends BaseController
      
         
     }
+
+    public function edit($id_instruktur = null){
+        $data['user'] = $this->user->findAll();
+        $data['instruktur'] = $this->instruktur->where('id_instruktur',$id_instruktur)->first();
+        return view('Instruktur/edit',$data);
+        }
+    
+
+    public function update($id_kelas = null){
+        $data = $this->request->getPost();
+        $this->kelas->update($id_kelas,$data);
+        return redirect()->to(site_url('kelas'))->with('success', 'Data Kelas Berhasil DiUbah');
+    }
+    
+      
+    
 }

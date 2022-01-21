@@ -36,13 +36,38 @@ $routes->post('process', 'Authentication::loginproses');
 $routes->get('registrasi', 'admin\Siswa::registrasi');
 $routes->post('registrasi', 'admin\Siswa::save');
 // $routes->get('registrasi', 'admin\Siswa::get');
+
+//Dashboar Administrasi
 $routes->group('admin', function ($routes) {
-    $routes->get('/', 'admin\home::index');
+    $routes->get('', 'home::index');
     $routes->get('siswa', 'admin\Siswa::index');
+
+    
+$routes->get('kelas', 'admin\Kelas::index');
+$routes->get('kelas/add', 'admin\Kelas::create');
+$routes->post('kelas', 'admin\Kelas::save');
 });
+
+
+$routes->get('programkursus', 'admin\Programkursus::index');
+$routes->get('programkursus/add', 'admin\Programkursus::create');
+$routes->post('programkursus', 'admin\Programkursus::save');
+$routes->put('programkursus', 'admin\Programkursus::edit');
+
+
+$routes->get('instruktur', 'admin\instruktur::index');
+$routes->get('instruktur/add', 'admin\instruktur::create');
+$routes->post('instruktur', 'admin\instruktur::save');
+$routes->put('instruktur', 'admin\instruktur::edit');
+
+// Instruktur
 $routes->group('instruktur', function ($routes) {
     $routes->get('/', 'admin\home::index');
 });
+
+
+
+//Siswa
 $routes->group('siswa', function ($routes) {
     $routes->get('', 'Home::index');
 });
@@ -63,20 +88,11 @@ $routes->group('siswa', function ($routes) {
 // $routes->get('alumni/add', 'Alumni::create');
 // $routes->post('alumni', 'Alumni::save');
 
-// data kelas
-$routes->get('kelas', 'admin\Kelas::index');
-$routes->get('kelas/add', 'admin\Kelas::create');
-$routes->post('kelas', 'admin\Kelas::save');
 
-// Data Program Kursus
-$routes->get('programkursus', 'admin\Programkursus::index');
-$routes->get('programkursus/add', 'admin\Programkursus::create');
-$routes->post('programkursus', 'admin\Programkursus::save');
 
-//Data Instruktur
-$routes->get('instruktur', 'admin\instruktur::index');
-$routes->get('instruktur/add', 'admin\instruktur::create');
-$routes->post('instruktur', 'admin\instruktur::save');
+
+
+
 
 // Login
 // $routes->get('login', 'Auth::login');

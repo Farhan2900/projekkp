@@ -17,7 +17,9 @@ class Siswa extends BaseController
     {
         
         $data = [
+
             'siswa' => $this->siswa->getUser(),
+            'title' => $this->siswa->getUser(),
         ];
      
         return view('siswa/get',$data);
@@ -49,6 +51,8 @@ class Siswa extends BaseController
         $data['email'] = $user['email'];
         $data['akses'] = $user['akses'];
         session()->set($data);
+        return redirect()->to(base_url('home'))->with('success', 'Silahkan Lengkapi Biodata');
+        
     }
 
    

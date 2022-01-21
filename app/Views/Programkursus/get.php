@@ -26,7 +26,8 @@
                             <td><?= $key +1?></td>
                             <td><?= $value->program_kursus?></td>
                             <td class="text-center" style="width:15%">
-                                <a href="" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="<?= base_url('admin/programkursus/edit/'.$value->id_program)?>"
+                                    class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
                                 <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>

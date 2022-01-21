@@ -36,14 +36,14 @@ class ProgramKursus extends BaseController
 
     }
 
-    // public function edit($id_kelas = null){
-    //     $data['kelas'] = $this->kelas->where('id_kelas',$id_kelas)->first();
-    //     return view('kelas/edit', $data);
-    // }
+    public function edit($id_program = null){
+        $data['programkursus'] = $this->programkursus->where('id_program',$id_program)->first();
+        return view('Programkursus/edit', $data);
+    }
 
-    // public function update($id_kelas = null){
-    //     $data = $this->request->getPost();
-    //     $this->kelas->update($id_kelas,$data);
-    //     return redirect()->to(site_url('kelas'))->with('success', 'Data Kelas Berhasil DiUbah');
-    // }
+    public function update($id_program = null){
+        $data = $this->request->getPost();
+        $this->programkursus->update($id_program,$data);
+        return redirect()->to(site_url('programkursus'))->with('success', 'Data programkursus Berhasil DiUbah');
+    }
 }
