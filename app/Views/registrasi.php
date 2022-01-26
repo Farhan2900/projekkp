@@ -46,7 +46,7 @@
                                     </div>
                                     <div class="form-group col-6">
                                         <label for="last_name">Nama Siswa</label>
-                                        <input id="last_name" type="text" class="form-control" name="nm_siswa">
+                                        <input id="last_name" type="text" class="form-control" name="nama_siswa">
                                     </div>
                                 </div>
                                 <div class="form-group">

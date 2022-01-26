@@ -15,7 +15,7 @@ class Alumni extends BaseController
     }
     public function index()
     {
-        $data['alumni'] = $this->alumni->getSiswa();
+        $data['alumni'] = $this->alumni->getAll();
         return view('alumni/get',$data);
     }
 
@@ -23,9 +23,10 @@ class Alumni extends BaseController
     {
         
         $data =array(
-            'alumni' => $this->alumni->getSiswa(),
-            'siswa' => $this->siswa->getAll() 
+            'alumni' => $this->alumni->getAll(),
+            // 'siswa' => $this->siswa->findAll() 
         );
+        // dd($data);
         return view('alumni/add',$data);
         
     }
@@ -33,6 +34,7 @@ class Alumni extends BaseController
     public function save(){
         
         $data = $this->request->getPost();
+        // dd($data);
         $this->alumni->insert($data);
 
 

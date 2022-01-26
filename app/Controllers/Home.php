@@ -9,6 +9,7 @@ class Home extends BaseController
     function __construct()
     {
         $this->home = new HomeModel();
+        session()->set(['active' => 'home']);
         helper('form');
     }
     public function index()

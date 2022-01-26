@@ -13,6 +13,7 @@ class Kelas extends BaseController
         $this->kelaskursus = new KelasModel();
         $this->instruktur = new InstrukturModel();
         $this->programkursus = new ProgramKursusModel();
+        session()->set(['active' => 'kelaskursus']);
         helper('form');
     }
     public function index()
@@ -38,6 +39,22 @@ class Kelas extends BaseController
            $data = $this->request->getPost();
            $this->kelaskursus->insert($data);
      
-           return redirect()->to(site_url('kelas'))->with('success', 'Kelas Kursus Berhasil Di Tambahkan');
+           return redirect()->to(site_url('admin/kelas'))->with('success', 'Data Kelas Kursus Berhasil Di Tambahkan');
+    }
+    public function edit($id = null){
+        $data['instruktur'] = $this->instruktur->findAll();
+        $data['programkursus'] = $this->programkursus->findAll();
+        $data['kelaskursus'] = $this->kelaskursus->where('id',$id)->first();
+
+        if (empty($data['kelaskursus'])) {
+            return view('errors/404');
+        }
+        return view('Kelas/edit', $data);
+    }
+
+    public function update($id = null){ 
+        $data = $this->request->getPost();
+        $this->kelaskursus->update($id,$data);
+        return redirect()->to(site_url('admin/kelas'))->with('success', 'Data kelaskursus Berhasil Di Ubah');
     }
 }

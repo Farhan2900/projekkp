@@ -22,7 +22,7 @@
                         <input type="text" name="program_kursus" class="form-control" required autofocus>
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i>Simpan</button>
+                        <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i> Simpan</button>
                         <button type="reset" class="btn btn-secondary">Reset</button>
                     </div>
                 </form>

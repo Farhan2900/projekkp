@@ -4,12 +4,18 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\SiswaModel;
 use App\Models\UserModel;
+use App\Models\ProgramKursusModel;
+use App\Models\KelasModel;
+
 class Siswa extends BaseController
 {
     function __construct()
     {
         $this->siswa = new SiswaModel();
         $this->user = new UserModel();
+        $this->programkursus = new ProgramKursusModel();
+        $this->kelas = new KelasModel();
+        session()->set(['active' => 'siswa']);
         helper('form');
     }
 
@@ -19,11 +25,20 @@ class Siswa extends BaseController
         $data = [
 
             'siswa' => $this->siswa->getUser(),
-            'title' => $this->siswa->getUser(),
         ];
-     
         return view('siswa/get',$data);
     }
+
+    public function detail($id_siswa= null)
+    {
+        $data=[
+            'siswa' => 
+            $this->siswa->detail($id_siswa),
+        ];
+        // dd($data);  
+        return view('siswa/detail',$data);
+    }
+   
 
     public function registrasi(){
         $data['user']= $this->user->findAll();
@@ -42,8 +57,8 @@ class Siswa extends BaseController
         $iduser = $this->user->getInsertID();
         $data = [
             'NIK' => $this->request->getVar('NIK'),
-            'nm_siswa' => $this->request->getVar('nm_siswa'),
-            'tb_user_id'=> $iduser,
+            'nama_siswa' => $this->request->getVar('nama_siswa'),
+            'id_user'=> $iduser,
         ];
         $this->siswa->insert($data);
         $data['id'] = $iduser;
@@ -69,12 +84,7 @@ class Siswa extends BaseController
     //     return redirect()->to(site_url('siswa'))->with('success', 'Data Siswa Berhasil Di Registrasi');
     // }
 
-    // public function detail($NIS){
-        
-    //     $data['siswa'] = $this->siswa->detail($NIS);
-    //     return view('siswa/detail',$data);
-
-    // }
+    
     // public function edit($NIS = null){
     //     $data['kelas'] = $this->kelas->findAll();
     //     $data['siswa'] = $this->siswa->where('NIS',$NIS)->first();

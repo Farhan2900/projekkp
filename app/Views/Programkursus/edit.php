@@ -24,7 +24,7 @@
                             value="<?= $programkursus->program_kursus?>" required autofocus>
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i>Ubah
+                        <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i> Ubah
                             Data</button>
                         <button type="reset" class="btn btn-secondary">Reset</button>
                     </div>

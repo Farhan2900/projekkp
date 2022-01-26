@@ -2,7 +2,7 @@
 <?= $this->section('content')?>
 <section class="section">
     <div class="section-header">
-        <a href="<?= site_url('siswa/add')?>" class="btn btn-primary"><i class="fas fa-database"></i> Registrasi</a>
+
         <div id="flash" data-flash="<?= session()->getFlashdata('success'); ?>"></div>
         <div class="section-header-breadcrumb">
             <a href="<?= site_url('alumni/add')?>" class="btn btn-primary"><i class="fas fa-plus"></i> Alumni Peserta
@@ -25,20 +25,22 @@
                             <th>Password</th>
                             <th>Email</th>
                             <th>Akses</th>
-                            <th class="text-center">Opsi</th>
+                            <th>Opsi</th>
+
                         </tr>
                         <?php foreach ($siswa as $key => $value) :?>
                         <tr>
                             <td><?= $key +1?></td>
                             <td><?= $value->NIK?></td>
-                            <td><?= $value->nm_siswa?></td>
+                            <td><?= $value->nama_siswa?></td>
                             <td><?= $value->username?></td>
                             <td><?= $value->password?></td>
                             <td><?= $value->email?></td>
                             <td><?= $value->akses?></td>
 
-                            <td class="text-center" style="width: 95px;">
-                                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                            <td>
+                                <a href="<?= base_url('admin/siswa/detail/'. $value->id_siswa)?>"
+                                    class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></a>
                             </td>
                         </tr>
                         <?php endforeach;?>

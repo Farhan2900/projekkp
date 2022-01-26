@@ -45,9 +45,9 @@ class Authentication extends BaseController
                     return redirect()->to(base_url('siswa'));
                 }else{
                     $sis = new \App\Models\SiswaModel();
-                    $siswa = $sis->where('tb_user_id', $user->id)->get()->getRowObject();
+                    $siswa = $sis->where('id_user', $user->id)->get()->getRowObject();
                     $item = [
-                        'nama'=> $siswa->nm_siswa,
+                        'nama'=> $siswa->nama_siswa,
                         'username'=> $user->username,
                         'email'=> $user->email,
                         'akses'=> $user->akses,
@@ -63,6 +63,6 @@ class Authentication extends BaseController
     }
     public function logout(){
         session()->destroy();
-        return redirect()->to(base_url('login'));
+        return redirect()->to('/');
     }
 }

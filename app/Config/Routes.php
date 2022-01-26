@@ -46,6 +46,7 @@ $routes->group('admin', function ($routes) {
 $routes->get('kelas', 'admin\Kelas::index');
 $routes->get('kelas/add', 'admin\Kelas::create');
 $routes->post('kelas', 'admin\Kelas::save');
+$routes->put('kelas', 'admin\Kelas::edit');
 });
 
 
@@ -60,9 +61,18 @@ $routes->get('instruktur/add', 'admin\instruktur::create');
 $routes->post('instruktur', 'admin\instruktur::save');
 $routes->put('instruktur', 'admin\instruktur::edit');
 
+$routes->get('detailkelas', 'admin\detailkelas::index');
+$routes->get('detailkelas/add', 'admin\detailkelas::create');
+$routes->post('detailkelas', 'admin\detailkelas::save');
+$routes->put('detailkelas', 'admin\detailkelas::edit');
+
+$routes->get('alumni', 'admin/Alumni::index');
+$routes->get('alumni/add', 'admin/Alumni::create');
+$routes->post('alumni', 'admin/Alumni::save');
+
 // Instruktur
 $routes->group('instruktur', function ($routes) {
-    $routes->get('/', 'admin\home::index');
+    $routes->get('', 'admin\home::index');
 });
 
 
@@ -84,9 +94,6 @@ $routes->group('siswa', function ($routes) {
 // $routes->put('siswa', 'admin\Siswa::edit');
 
 // // Data Siswa
-// $routes->get('alumni', 'Alumni::index');
-// $routes->get('alumni/add', 'Alumni::create');
-// $routes->post('alumni', 'Alumni::save');
 
 
 

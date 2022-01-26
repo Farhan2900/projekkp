@@ -11,6 +11,7 @@ class Instruktur extends BaseController
     {
         $this->instruktur = new InstrukturModel();
         $this->user = new UserModel();
+        session()->set(['active' => 'instruktur']);
         helper('form');
     }
     public function index()
@@ -32,38 +33,43 @@ class Instruktur extends BaseController
        
             $user = [
                 'username' => $this->request->getVar('username'),
-                'password' => md5($this->request->getVar('password')) ,
+                'password' => $this->request->getVar('password') ,
                 'email' => $this->request->getVar('email'),
                 'akses' => 'Instruktur',
             ];
-            // $data = $this->request->getVar();
-            // $data['akses']='Instruktur';
             $this->user->insert($user);
             $iduser = $this->user->getInsertID();
             $data = [
                 'nm_instruktur' => $this->request->getVar('nm_instruktur'),
                 'alamat' => $this->request->getVar('alamat'),
                 'nohp' => $this->request->getVar('nohp'),
-                'tb_user_id'=> $iduser,
+                'id_user'=> $iduser,
             ];
             $this->instruktur->insert($data);
             return redirect()->to(site_url('instruktur'))->with('success', 'Data Instruktur Berhasil Di Registrasi');
-     
-        
     }
 
     public function edit($id_instruktur = null){
-        $data['user'] = $this->user->findAll();
-        $data['instruktur'] = $this->instruktur->where('id_instruktur',$id_instruktur)->first();
+      
+        $data = [
+            'instruktur' => $this->instruktur->where('id_instruktur',$id_instruktur)->first()
+            
+        ];
+        if (empty($data['instruktur'])) {
+            return view('errors/404');
+        }
+        
         return view('Instruktur/edit',$data);
         }
-    
-
-    public function update($id_kelas = null){
+        
+    public function update($id_instruktur=null){  
         $data = $this->request->getPost();
-        $this->kelas->update($id_kelas,$data);
-        return redirect()->to(site_url('kelas'))->with('success', 'Data Kelas Berhasil DiUbah');
+        $this->instruktur->update($id_instruktur,$data);
+        // $this->user->update($data);
+        return redirect()->to(site_url('instruktur'))->with('success', 'Data Instruktur Di Berhasil Ubah');
     }
+
+    
     
       
     

@@ -3,7 +3,7 @@
 <section class="section">
     <div class="section-header">
         <div class="section-header-button">
-            <a href="<?= site_url('kelas/add')?>" class="btn btn-primary"><i class="fas fa-database"></i>
+            <a href="<?= site_url('admin/kelas/add')?>" class="btn btn-primary"><i class="fas fa-database"></i>
                 Tambah
                 Data</a>
         </div>
@@ -32,8 +32,8 @@
                             <td><?= $value->jam_mulai?> - <?= $value->jam_selesai?></td>
                             <td><?= $value->program_kursus?></td>
                             <td class="text-center" style="width:15%">
-                                <a href="" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                <a href="<?= base_url('admin/Kelas/edit/'.$value->id)?>"
+                                    class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

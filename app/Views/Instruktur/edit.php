@@ -24,30 +24,17 @@
                             </div>
                             <div class=" form-group col-md-4">
                                 <label>Alamat</label>
-                                <input type="text" class="form-control" name="alamat" required>
+                                <input type="text" class="form-control" name="alamat" value="<?= $instruktur->alamat?>"
+                                    required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Nomor Telepon</label>
-                                <input type="text" class="form-control" name="nohp" required>
+                                <input type="text" class="form-control" name="nohp" value="<?= $instruktur->nohp?>"
+                                    required>
                             </div>
 
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <label>Username</label>
-                                <input type="text" class="form-control" name="username">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Password</label>
-                                <input type="text" class="form-control" name="password" required>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Email</label>
-                                <input type="email" class="form-control" name="email" required>
-                            </div>
 
-
-                        </div>
 
                         <div class="">
                             <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i>

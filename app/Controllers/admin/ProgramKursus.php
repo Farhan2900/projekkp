@@ -9,6 +9,7 @@ class ProgramKursus extends BaseController
     function __construct()
     {
         $this->programkursus = new ProgramKursusModel();
+        session()->set(['active' => 'programkursus']);
         helper('form');
     }
     public function index()
@@ -38,12 +39,16 @@ class ProgramKursus extends BaseController
 
     public function edit($id_program = null){
         $data['programkursus'] = $this->programkursus->where('id_program',$id_program)->first();
+        if (empty($data['programkursus'])) {
+            return view('errors/404');
+        }
         return view('Programkursus/edit', $data);
+
     }
 
     public function update($id_program = null){
         $data = $this->request->getPost();
         $this->programkursus->update($id_program,$data);
-        return redirect()->to(site_url('programkursus'))->with('success', 'Data programkursus Berhasil DiUbah');
+        return redirect()->to(site_url('programkursus'))->with('success', 'Data programkursus Berhasil Di Ubah');
     }
 }
