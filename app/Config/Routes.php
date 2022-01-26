@@ -66,9 +66,9 @@ $routes->get('detailkelas/add', 'admin\detailkelas::create');
 $routes->post('detailkelas', 'admin\detailkelas::save');
 $routes->put('detailkelas', 'admin\detailkelas::edit');
 
-$routes->get('alumni', 'admin/Alumni::index');
-$routes->get('alumni/add', 'admin/Alumni::create');
-$routes->post('alumni', 'admin/Alumni::save');
+// $routes->get('alumni', 'admin/Alumni::index');
+// $routes->get('alumni/add', 'admin/Alumni::create');
+// $routes->post('alumni', 'admin/Alumni::save');
 
 // Instruktur
 $routes->group('instruktur', function ($routes) {

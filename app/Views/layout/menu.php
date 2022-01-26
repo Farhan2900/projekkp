@@ -28,8 +28,7 @@ if(session()->get('akses') == 'Admin') :?>
         href="<?= site_url('detailkelas')?>"><i class="fas fa-users"></i></i>
         <span>Peserta
             Didik</span></a></li>
-<li><a class="nav-link" href="<?= site_url('admin/alumni')?>"> <i class="fas fa-graduation-cap"></i> <span>Data
-            Alumni</span></a></li>
+
 <?php endif;?>
 
 <?php if(session()->get('akses') =='Siswa') :?>
